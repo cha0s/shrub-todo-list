@@ -13,7 +13,9 @@ exports.pkgmanRegister = function(registrar) {
       '$window',
 
       // Inject our TODO list service.
-      'todo-list', function ($window, todoList) {
+      'todo-list',
+
+      function ($window, todoList) {
 
         var directive = {};
 
@@ -35,6 +37,9 @@ exports.pkgmanRegister = function(registrar) {
             // Store the item in the form so fields can access it.
             item: scope.item,
 
+            // The fields object defines all the form fields for this form.
+            // By default, the fields' names are derived from the key, unless
+            // explicitly overridden.
             fields: {
 
               // The TODO item text. This is a markup field, its value is

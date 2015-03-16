@@ -5,7 +5,9 @@ exports.pkgmanRegister = function(registrar) {
 
     return [
 
-      'todo-list', function(todoList) {
+      'todo-list',
+
+      function(todoList) {
 
         var directive = {};
 
@@ -16,7 +18,7 @@ exports.pkgmanRegister = function(registrar) {
           scope.todoList = todoList;
         };
 
-        // Use the TODO list items to built an unordered list. Each list item
+        // Use the TODO list items to build an unordered list. Each list item
         // receives the corresponding TODO item.
         directive.template = '                                       \
           <ul                                                        \

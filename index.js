@@ -52,6 +52,8 @@ exports.pkgmanRegister = function(registrar) {
 
         // Get the TODO list items, sorted by when they were created.
         TodoListItem.find().sort('createdAt DESC').then(function(items) {
+
+          // Send the client the items.
           res.end(items);
         });
       }
@@ -80,6 +82,7 @@ exports.pkgmanRegister = function(registrar) {
           next();
         },
 
+        // Create an item.
         function(req, res, next) {
 
           var item = {text: req.body.text};
@@ -127,6 +130,7 @@ exports.pkgmanRegister = function(registrar) {
           next();
         },
 
+        // Update an item.
         function(req, res, next) {
 
           // Update the item with the values in the request body.
@@ -161,6 +165,7 @@ exports.pkgmanRegister = function(registrar) {
           next();
         },
 
+        // Delete an item.
         function(req, res, next) {
 
           // Destroy by ID.

@@ -8,6 +8,8 @@ exports.pkgmanRegister = function(registrar) {
     // This is our main /todo path.
     routes.push({
       path: 'todo',
+
+      // The window title shown for this path.
       title: 'TODO',
 
       // Show our top-level directives. Directive names default to reflect the
@@ -29,7 +31,11 @@ exports.pkgmanRegister = function(registrar) {
     return routes;
   });
 
-  // Define a service to manage our TODO list.
+  // Define a service to manage our TODO list. Service names are derived from
+  // the path, similar to directives  (explained above). The difference is,
+  // slashes are not removed from the service name. In other words, a package
+  // with a structure like some-package/client/system/things.js would provide
+  // a service named some-package/system/things
   registrar.registerHook('shrubAngularService', function() {
 
     // We return an annotated function, just like if we were using Angular

@@ -5,7 +5,9 @@ exports.pkgmanRegister = function(registrar) {
 
     return [
 
-      'todo-list', function(todoList) {
+      'todo-list',
+
+      function(todoList) {
 
         var directive = {};
 
