@@ -5,8 +5,6 @@ exports.pkgmanRegister = function(registrar) {
   // interaction occurs.
   registrar.registerHook('shrubAngularDirective', function() {
 
-    // We return an annotated function, just like if we were using Angular
-    // directly. In this case we are using array notation.
     return [
 
       // Inject the window object so we can focus the input when editing.
